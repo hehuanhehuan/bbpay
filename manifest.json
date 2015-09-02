@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "poptop-alipay",
+  "version": "0.3.12",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://consumeprod.alipay.com/record/advanced.htm*"],
+      "js": ["jquery-2.1.1.min.js", "alipay-record.js"]
+    },
+    {
+      "matches": ["https://mbillexprod.alipay.com/enterprise/accountDetail.htm*"],
+      "js": ["jquery-2.1.1.min.js", "alipay-enterprise.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    "control-template.html"
+  ]
+}
